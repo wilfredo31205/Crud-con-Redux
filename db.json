@@ -1,0 +1,34 @@
+{
+  "productos": [
+    {
+      "nombre": "santa",
+      "precio": 204,
+      "id": "0078"
+    },
+    {
+      "nombre": "ohy",
+      "precio": 350,
+      "id": "45214"
+    },
+    {
+      "nombre": "ggfdsg",
+      "precio": 250,
+      "id": "65"
+    },
+    {
+      "nombre": "dfdb",
+      "precio": 185,
+      "id": "1453"
+    },
+    {
+      "nombre": "Wiksy",
+      "precio": 125,
+      "id": "152"
+    },
+    {
+      "nombre": "sfsa",
+      "precio": 332,
+      "id": "4525"
+    }
+  ]
+}
