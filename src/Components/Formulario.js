@@ -22,6 +22,9 @@ import Presidente from '../images/presidente.jpg';
 import { CrearNuevoProductoAction } from '../actions/BebidasAction'; // importando la funcion del archivo de redux BebidasAction
 
 
+import { MostrarAlerta } from '../actions/AlertaAction';
+
+
 
 
 
@@ -60,9 +63,12 @@ const Formulario = ({history}) => { // utilizamos history para redireccionar
 
        //  console.log(cargando);
 
-
-
         const error = useSelector(state=>state.Bebidas.error)
+
+
+        const alerta = useSelector(state=>state.alerta.alerta)
+
+
 
      //   console.log(error);
 
@@ -88,6 +94,20 @@ const Formulario = ({history}) => { // utilizamos history para redireccionar
         // validar el formulario
 
         if(nombre.trim() === ' ' || precio <= 0 || id.trim() === ''){
+
+
+
+                const respuesta = {
+
+                    msg: 'Todos los campos deben ser llenado o completado , favor de llenar los campos',
+
+       
+
+                 className :"error1"
+
+                }
+                
+              dispatch(MostrarAlerta(respuesta));
 
             return ;
 
@@ -149,6 +169,11 @@ const Formulario = ({history}) => { // utilizamos history para redireccionar
         <div className="row">
         <div class="card-panel teal amber accent-4  center-align titulo ">Agrega tu bebida favorita</div>
             
+        { alerta  ? <p className={alerta.className}>{alerta.msg}</p> : null}
+        
+        { error ? <p className="error1">Hubo un error brother</p> : null }
+
+
   
         <div  className="input-field col s4 m4  l2">
 
@@ -221,7 +246,8 @@ const Formulario = ({history}) => { // utilizamos history para redireccionar
             
             
             </button>
-    
+
+      
     
 
             <button class="btn waves-effect waves-light btn-large boton    green darken-1 animate__animated animate__backInUp boton-editar" type="submit" name="action">
@@ -260,8 +286,6 @@ const Formulario = ({history}) => { // utilizamos history para redireccionar
         { cargando ? <p>Cargando...</p> : null }
 
 
-
-        { error ? <p className="error">Hubo un error brother</p> : null }
 
 
 

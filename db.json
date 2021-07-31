@@ -1,8 +1,8 @@
 {
   "productos": [
     {
-      "nombre": "santa",
-      "precio": 204,
+      "nombre": "santa mariar",
+      "precio": "001",
       "id": "0078"
     },
     {
@@ -29,6 +29,21 @@
       "nombre": "sfsa",
       "precio": 332,
       "id": "4525"
+    },
+    {
+      "nombre": "Volvio Juanita",
+      "precio": 325,
+      "id": "112851"
+    },
+    {
+      "nombre": "dsfsadf",
+      "precio": 1814,
+      "id": "785"
+    },
+    {
+      "nombre": "dfs",
+      "precio": 5,
+      "id": "581"
     }
   ]
 }

@@ -388,6 +388,10 @@ export function editarProductoAction(producto){
                console.log(resultado);
 
 
+                dispatch(editarProductoExito(producto));  // si la consulta a la api de actualizar se ejecuta correctamente ejecutamos esta funcion
+
+
+
                 
             } catch (error) {
                 
@@ -406,12 +410,19 @@ export function editarProductoAction(producto){
 
 
 
-const editarProducto = (producto)=>({
+const editarProducto = ()=>({
 
     type :  COMENZAR_EDICION_PRODUCTO,
 
-    payload: producto
 
+})
+
+
+const editarProductoExito = (producto)=>({
+
+    type: PRODUCTO_EDITADO_EXITO, // en caso de que el producto o bebida se actualizo correctamente, entonces vamos a modificar el state 
+    
+   payload: producto
 
 
 

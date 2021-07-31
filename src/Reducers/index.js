@@ -7,13 +7,17 @@ import {  combineReducers } from 'redux' //  combineReducers :  para combiar var
 
 import BebidasReducer from './BebidasReducer' // importando nuestros reducer , aqui se va a importar multiples reducer
 
+import AlertasReducer from './AlertasReducer'
+
 
 export default combineReducers({
 
 
-    Bebidas: BebidasReducer // diciendole, bueno la parte de las bebidas se va a llamar Bebidas y su reducer es BebidasReducer
+    Bebidas: BebidasReducer, // diciendole, bueno la parte de las bebidas se va a llamar Bebidas y su reducer es BebidasReducer
 
     // de esta forma podemos tener multiples reducer , uno va a tener clientes, usuarios autenticado  ext 
+
+    alerta: AlertasReducer // state de alerta  
 
 
 

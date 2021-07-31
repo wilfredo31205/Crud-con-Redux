@@ -6,9 +6,7 @@ import Staburck from '../images/staburck.gif';
 
 import {  useDispatch , useSelector } from "react-redux";
 import { editarProductoAction } from '../actions/BebidasAction';
-
-
-
+import { useHistory } from 'react-router-dom';
 
 
 
@@ -66,7 +64,7 @@ const FormularioEditar = () => {
 
 
 
-
+    const history = useHistory();
 
     const dispatch = useDispatch();
 
@@ -88,7 +86,12 @@ const FormularioEditar = () => {
 
         w.preventDefault();
 
-        submiEditarProducto();
+
+        dispatch(editarProductoAction(Bebidas)) // pasandole las bebidas del state que creamos mas arriba 
+
+
+        history.push('/listado')
+
 
 
 
@@ -120,6 +123,7 @@ const FormularioEditar = () => {
         placeholder="Nombre"
         type="text"
         className="validate animate__animated animate__flip"
+        name="nombre"
         value={Bebidas.nombre}
         onChange={Onchangeformulario}
         
@@ -139,7 +143,8 @@ const FormularioEditar = () => {
         placeholder="Precio "
         type="number"
         className="validate animate__animated animate__flip"
-       value={precio}
+        name="precio"
+       value={Bebidas.precio}
        onChange={Onchangeformulario}
         //onChange={e=>setPrecio(Number(e.target.value))}
      
@@ -158,7 +163,8 @@ const FormularioEditar = () => {
         placeholder="Codigo "
         type="number"
         className="validate animate__animated animate__flip"
-         value={id}
+         value={Bebidas.id}
+         name="id"
          onChange={Onchangeformulario}
       //  onChange={e=>setID(e.target.value)}
      

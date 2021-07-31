@@ -18,7 +18,9 @@ import {
     PRODUCTO_ELIMINADO_ERROR,
     OBTENER_PRODUCTO_EDITAR,
 
-    PRODUCTO_EDITADO
+    PRODUCTO_EDITADO,
+    PRODUCTO_EDITADO_EXITO,
+    PRODUCTO_EDITADO_ERROR
 
 
 
@@ -78,6 +80,7 @@ export default function(state =  initialState , action){  // si se le pasa un st
             }
 
             case  AGREGAR_PRODUCTO_ERROR : 
+             case PRODUCTO_EDITADO_ERROR: // va a hacer igual a todos los case que tenga error 
 
             return{
 
@@ -188,6 +191,33 @@ export default function(state =  initialState , action){  // si se le pasa un st
 
                 }
 
+
+                case PRODUCTO_EDITADO_EXITO : 
+
+                    return {
+
+
+                            ...state,
+
+                            productoeditar: null,
+                            productos: state.productos.map(producto=> // tomamos todos los productos o bebidas del state y comparamso 
+                                
+                                
+                                producto.id === action.payload.id ? producto = action.payload : producto // si el payload que le estamos pasando , su id es igual producto.id que estamos iterando en ese momento 
+                                // reemplaza el producto actual  o todo el objeto completo con lo que se pase como payoad 
+                                
+
+                                //  producto.id === action.payload.id // si el producto que estoy iterando su id es igual al del  action.payload.id que el payload que tiene es producto 
+                                // entoces el producto actual  va a hacer igual a a action.payload  en caso contrario retorname el producto 
+                                
+                                
+                                )
+
+
+
+
+
+                    }
 
 
         default:
